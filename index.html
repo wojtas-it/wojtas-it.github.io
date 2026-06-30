@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wojtas IT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+
+    header nav a {
+      color: #888;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 4rem 3rem;
+      max-width: 860px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 span {
+      color: #4f8ef7;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #999;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero .cta {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      background: #4f8ef7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .hero .cta:hover {
+      background: #3a7be0;
+    }
+
+    footer {
+      padding: 1.5rem 3rem;
+      border-top: 1px solid #222;
+      font-size: 0.8rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="logo">wojtas-it</span>
+    <nav>
+      <a href="#">Projekty</a>
+      <a href="#">O mnie</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Cześć, jestem<br><span>Wojtas</span></h1>
+      <p>Programista. Strona w budowie, wróć niedługo albo napisz maila.</p>
+      <a href="mailto:filipiflap@gmail.com" class="cta">Napisz do mnie</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 wojtas-it
+  </footer>
+
+</body>
+</html>
