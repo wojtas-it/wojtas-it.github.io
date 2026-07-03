@@ -1,126 +1,94 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wojtas IT</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f0f0f;
-      color: #e0e0e0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222;
-    }
-
-    header .logo {
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: #fff;
-    }
-
-    header nav a {
-      color: #888;
-      text-decoration: none;
-      margin-left: 2rem;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    header nav a:hover {
-      color: #fff;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding: 4rem 3rem;
-      max-width: 860px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: #fff;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero h1 span {
-      color: #4f8ef7;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: #999;
-      line-height: 1.7;
-      max-width: 520px;
-      margin-bottom: 2.2rem;
-    }
-
-    .hero .cta {
-      display: inline-block;
-      padding: 0.75rem 1.8rem;
-      background: #4f8ef7;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-
-    .hero .cta:hover {
-      background: #3a7be0;
-    }
-
-    footer {
-      padding: 1.5rem 3rem;
-      border-top: 1px solid #222;
-      font-size: 0.8rem;
-      color: #444;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0c">
+<title>Filip Wojtasiński - Portfolio</title>
+<meta name="description" content="Portfolio of Filip Wojtasiński: embedded and IoT, full-stack and mobile web, game development, and machine learning projects.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0c'/%3E%3Crect x='14' y='4' width='4' height='9' fill='%23e2a640'/%3E%3Crect x='14' y='19' width='4' height='9' fill='%23e2a640'/%3E%3Crect x='4' y='14' width='9' height='4' fill='%23e2a640'/%3E%3Crect x='19' y='14' width='9' height='4' fill='%23e2a640'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main" data-i18n="skipLink">Skip to main content</a>
 
-  <header>
-    <span class="logo">wojtas-it</span>
-    <nav>
-      <a href="#">Projekty</a>
-      <a href="#">O mnie</a>
-      <a href="#">Kontakt</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand mono" href="#top" data-i18n="brand">wojtas.it</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#projects" data-i18n="navProjects">Projects</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
     </nav>
-  </header>
-
-  <main>
-    <div class="hero">
-      <h1>Cześć, jestem<br><span>Wojtas</span></h1>
-      <p>Programista. Strona w budowie, wróć niedługo albo napisz maila.</p>
-      <a href="mailto:filipiflap@gmail.com" class="cta">Napisz do mnie</a>
+    <div class="lang-switch mono" id="lang-switch" role="group" data-i18n-attr-label="langSwitcherLabel" aria-label="Language">
+      <button type="button" data-lang-btn="pl">PL</button>
+      <button type="button" data-lang-btn="en">EN</button>
+      <button type="button" data-lang-btn="de">DE</button>
     </div>
-  </main>
+  </div>
+</header>
 
-  <footer>
-    &copy; 2026 wojtas-it
-  </footer>
+<main id="main">
 
+  <section id="about" class="intro-section" aria-labelledby="intro-heading">
+    <div class="intro-grid">
+      <div class="intro-main">
+        <p class="index-label mono">00 / INTRO</p>
+        <h1 id="intro-heading" data-field="heroName">Filip Wojtasiński</h1>
+        <p class="hero-role mono" data-i18n="heroRole"></p>
+        <p class="intro-text" data-field="intro"></p>
+        <p class="about-text" data-field="about"></p>
+      </div>
+      <aside class="facts-panel mono" aria-label="Quick facts">
+        <dl>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelStatus"></dt>
+            <dd data-i18n="factsValueStatus" class="facts-status"></dd>
+          </div>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelLocation"></dt>
+            <dd data-i18n="factsValueLocation"></dd>
+          </div>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelEducation"></dt>
+            <dd data-i18n="factsValueEducation"></dd>
+          </div>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelFocus"></dt>
+            <dd data-i18n="factsValueFocus"></dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+    <div class="section-heading">
+      <p class="index-label mono">01 / WORK</p>
+      <h2 id="projects-heading" data-i18n="projectsHeading"></h2>
+      <p class="section-sub" data-i18n="projectsSub"></p>
+    </div>
+    <div class="filters mono" id="filters" role="group" aria-label="Filter projects by category"></div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </section>
+
+  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <div class="section-heading">
+      <p class="index-label mono">02 / CONTACT</p>
+      <h2 id="contact-heading" data-i18n="contactHeading"></h2>
+      <p class="section-sub" data-i18n="contactSub"></p>
+    </div>
+    <dl class="contact-panel mono" id="contact-panel"></dl>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="mono footer-note" data-i18n="footerNote"></p>
+  <p class="mono footer-copy">&copy; 2026 Filip Wojtasiński</p>
+</footer>
+
+<script src="content.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
