@@ -215,12 +215,13 @@
     panel.innerHTML = "";
 
     panel.appendChild(buildContactRow(t("contactEmailLabel"), CONTENT.contact.email, "mailto:" + CONTENT.contact.email));
-    panel.appendChild(buildContactRow(t("contactGithubLabel"), stripProtocol(CONTENT.contact.github), CONTENT.contact.github));
 
     if (CONTENT.contact.phone) {
       var telHref = "tel:" + CONTENT.contact.phone.replace(/[^+\d]/g, "");
       panel.appendChild(buildContactRow(t("contactPhoneLabel"), CONTENT.contact.phone, telHref));
     }
+
+    panel.appendChild(buildContactRow(t("contactGithubLabel"), stripProtocol(CONTENT.contact.github), CONTENT.contact.github));
 
     if (CONTENT.contact.linkedin) {
       panel.appendChild(buildContactRow(t("contactLinkedinLabel"), stripProtocol(CONTENT.contact.linkedin), CONTENT.contact.linkedin));

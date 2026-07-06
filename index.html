@@ -14,7 +14,9 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand mono" href="#top" data-i18n="brand">wojtas.it</a>
+    <a class="brand" href="#top" aria-label="wojtas.it">
+      <img src="logo.png" alt="wojtas.it" class="brand-logo">
+    </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#projects" data-i18n="navProjects">Projects</a>
       <a href="#about" data-i18n="navAbout">About</a>
@@ -57,6 +59,14 @@
             <dt data-i18n="factsLabelFocus"></dt>
             <dd data-i18n="factsValueFocus"></dd>
           </div>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelLanguages"></dt>
+            <dd data-i18n="factsValueLanguages"></dd>
+          </div>
+          <div class="facts-row">
+            <dt data-i18n="factsLabelStack"></dt>
+            <dd data-i18n="factsValueStack"></dd>
+          </div>
         </dl>
       </aside>
     </div>
@@ -84,7 +94,6 @@
 </main>
 
 <footer class="site-footer">
-  <p class="mono footer-note" data-i18n="footerNote"></p>
   <p class="mono footer-copy">&copy; 2026 Filip Wojtasiński</p>
 </footer>
 

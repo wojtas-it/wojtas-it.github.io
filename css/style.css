@@ -93,11 +93,16 @@ button:focus-visible {
 }
 
 .brand {
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  color: var(--text-bright);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
 }
 
 .site-nav {
@@ -471,9 +476,7 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
   border-top: 1px solid var(--border);
   padding: 1.5rem var(--gutter);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  justify-content: space-between;
+  justify-content: center;
   color: var(--text-dim);
   font-size: 0.78rem;
 }
