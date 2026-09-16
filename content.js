@@ -32,7 +32,7 @@ window.SITE_CONTENT = {
       navAbout: "About",
       navContact: "Contact",
       langSwitcherLabel: "Language",
-      heroRole: "IT student / full-stack & mobile / ML / embedded",
+      heroRole: "Full-stack & mobile / ML / embedded",
       factsLabelLocation: "Location",
       factsLabelStatus: "Status",
       factsLabelEducation: "Education",
@@ -70,7 +70,7 @@ window.SITE_CONTENT = {
       navAbout: "O mnie",
       navContact: "Kontakt",
       langSwitcherLabel: "Język",
-      heroRole: "Student informatyki / full-stack i mobile / ML / embedded",
+      heroRole: "Full-stack i mobile / ML / embedded",
       factsLabelLocation: "Lokalizacja",
       factsLabelStatus: "Status",
       factsLabelEducation: "Edukacja",
@@ -108,7 +108,7 @@ window.SITE_CONTENT = {
       navAbout: "Über mich",
       navContact: "Kontakt",
       langSwitcherLabel: "Sprache",
-      heroRole: "Informatikstudent / Full-Stack und Mobile / ML / Embedded",
+      heroRole: "Full-Stack und Mobile / ML / Embedded",
       factsLabelLocation: "Standort",
       factsLabelStatus: "Status",
       factsLabelEducation: "Ausbildung",
@@ -144,9 +144,9 @@ window.SITE_CONTENT = {
   heroName: "Filip Wojtasiński",
 
   intro: {
-    en: "I'm Filip, a Computer Science student at Tarnów University (spec. Intelligent Systems Engineering, embedded focus), going into my final semester in October 2026. I build working software across full-stack web and mobile, machine learning, game development, and embedded & IoT. Right now I'm finishing a professional internship, an automation tool for a large-format print shop that is in production use, and I'm looking for a paid internship or junior role from 13 July. Based in Tarnów, open to Kraków, Warsaw, Wrocław, and remote.",
-    pl: "Nazywam się Filip, studiuję Informatykę na Akademii Tarnowskiej w specjalizacji Inżynieria Systemów Inteligentnych (embedded), od października zaczynam ostatni semestr. Buduję działające oprogramowanie w kilku obszarach naraz: full-stack web i mobile, machine learning, game dev oraz embedded i IoT. Obecnie kończę praktyki zawodowe, podczas których napisałem narzędzie automatyzujące pracę drukarni wielkoformatowej, używane tam produkcyjnie, i szukam płatnego stażu lub pracy na poziomie junior od 13 lipca. Mieszkam w Tarnowie, jestem otwarty na Kraków, Warszawę, Wrocław i pracę zdalną.",
-    de: "Ich bin Filip, Informatikstudent an der Akademia Tarnowska (Sp. Intelligente Systemtechnik, Schwerpunkt Embedded) und fange im Oktober mein letztes Semester an. Ich baue funktionsfähige Software in verschiedenen Bereichen: Full-Stack Web und Mobile, Machine Learning, Game Development sowie Embedded und IoT. Gerade schließe ich ein Pflichtpraktikum ab, in dessen Rahmen ich ein Automatisierungstool für eine Großformatdruckerei entwickelt habe, das dort täglich im Produktivbetrieb eingesetzt wird. Ich suche ein bezahltes Praktikum oder eine Junior-Stelle ab dem 13. Juli. Ich wohne in Tarnów und bin offen für Krakau, Warschau, Breslau und Remote."
+    en: "I'm Filip. I build working software across full-stack web and mobile, machine learning, game development, and embedded & IoT. Right now I'm finishing a professional internship, an automation tool for a large-format print shop that is in production use, and I'm looking for a paid internship or junior role from 13 July. Based in Tarnów, open to Kraków, Warsaw, Wrocław, and remote.",
+    pl: "Nazywam się Filip. Buduję działające oprogramowanie w kilku obszarach naraz: full-stack web i mobile, machine learning, game dev oraz embedded i IoT. Obecnie kończę praktyki zawodowe, podczas których napisałem narzędzie automatyzujące pracę drukarni wielkoformatowej, używane tam produkcyjnie, i szukam płatnego stażu lub pracy na poziomie junior od 13 lipca. Mieszkam w Tarnowie, jestem otwarty na Kraków, Warszawę, Wrocław i pracę zdalną.",
+    de: "Ich bin Filip. Ich baue funktionsfähige Software in verschiedenen Bereichen: Full-Stack Web und Mobile, Machine Learning, Game Development sowie Embedded und IoT. Gerade schließe ich ein Praktikum ab, in dessen Rahmen ich ein Automatisierungstool für eine Großformatdruckerei entwickelt habe, das dort täglich im Produktivbetrieb eingesetzt wird. Ich suche ein bezahltes Praktikum oder eine Junior-Stelle ab dem 13. Juli. Ich wohne in Tarnów und bin offen für Krakau, Warschau, Breslau und Remote."
   },
 
   about: {
