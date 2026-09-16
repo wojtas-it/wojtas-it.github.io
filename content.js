@@ -144,9 +144,9 @@ window.SITE_CONTENT = {
   heroName: "Filip Wojtasiński",
 
   intro: {
-    en: "I'm Filip. I build working software across full-stack web and mobile, machine learning, game development, and embedded & IoT. Right now I'm finishing a professional internship, an automation tool for a large-format print shop that is in production use, and I'm looking for a paid internship or junior role from 13 July. Based in Tarnów, open to Kraków, Warsaw, Wrocław, and remote.",
-    pl: "Nazywam się Filip. Buduję działające oprogramowanie w kilku obszarach naraz: full-stack web i mobile, machine learning, game dev oraz embedded i IoT. Obecnie kończę praktyki zawodowe, podczas których napisałem narzędzie automatyzujące pracę drukarni wielkoformatowej, używane tam produkcyjnie, i szukam płatnego stażu lub pracy na poziomie junior od 13 lipca. Mieszkam w Tarnowie, jestem otwarty na Kraków, Warszawę, Wrocław i pracę zdalną.",
-    de: "Ich bin Filip. Ich baue funktionsfähige Software in verschiedenen Bereichen: Full-Stack Web und Mobile, Machine Learning, Game Development sowie Embedded und IoT. Gerade schließe ich ein Praktikum ab, in dessen Rahmen ich ein Automatisierungstool für eine Großformatdruckerei entwickelt habe, das dort täglich im Produktivbetrieb eingesetzt wird. Ich suche ein bezahltes Praktikum oder eine Junior-Stelle ab dem 13. Juli. Ich wohne in Tarnów und bin offen für Krakau, Warschau, Breslau und Remote."
+    en: "I'm Filip. I build working software across full-stack web and mobile, machine learning, game development, and embedded & IoT. I recently built an automation tool for a large-format print shop that's in daily production use, and I'm looking for a junior developer role from 13 July. Based in Tarnów, open to Kraków, Warsaw, Wrocław, and remote.",
+    pl: "Nazywam się Filip. Buduję działające oprogramowanie w kilku obszarach naraz: full-stack web i mobile, machine learning, game dev oraz embedded i IoT. Ostatnio zbudowałem narzędzie automatyzujące pracę drukarni wielkoformatowej, używane tam produkcyjnie na co dzień, i szukam pracy na poziomie junior od 13 lipca. Mieszkam w Tarnowie, jestem otwarty na Kraków, Warszawę, Wrocław i pracę zdalną.",
+    de: "Ich bin Filip. Ich baue funktionsfähige Software in verschiedenen Bereichen: Full-Stack Web und Mobile, Machine Learning, Game Development sowie Embedded und IoT. Kürzlich habe ich ein Automatisierungstool für eine Großformatdruckerei entwickelt, das dort täglich im Produktivbetrieb eingesetzt wird, und suche eine Junior-Stelle ab dem 13. Juli. Ich wohne in Tarnów und bin offen für Krakau, Warschau, Breslau und Remote."
   },
 
   about: {
@@ -218,9 +218,9 @@ window.SITE_CONTENT = {
         de: "Im Produktiveinsatz"
       },
       description: {
-        en: "A Python tool that automates prepress file preparation for large-format printing. It replaced a manual step in the workflow at the print shop where I intern and is used there in daily production. It places registration marks and a fold border automatically, based on the banner's size, while preserving CMYK color profiles and DPI.",
-        pl: "Narzędzie w Pythonie, które automatyzuje przygotowanie plików do druku wielkoformatowego. Zastąpiło ręczny etap procesu w drukarni, w której odbywam praktyki, i jest tam używane produkcyjnie na co dzień. Samo dobiera rozstaw celowników rejestracyjnych i dodaje ramkę na zagięcie, zachowując profil CMYK i DPI pliku.",
-        de: "Ein Python-Tool, das die Druckvorbereitung für den Großformatdruck automatisiert. Es hat einen manuellen Arbeitsschritt in der Druckerei ersetzt, in der ich mein Praktikum absolviere, und wird dort täglich im Produktivbetrieb eingesetzt. Es setzt Passmarken und einen Falzrahmen automatisch, basierend auf der Bannergröße, unter Beibehaltung der CMYK-Profile und DPI."
+        en: "A Python tool that automates prepress file preparation for large-format printing. It replaced a manual step in the print shop's workflow and is used there in daily production. It places registration marks and a fold border automatically, based on the banner's size, while preserving CMYK color profiles and DPI.",
+        pl: "Narzędzie w Pythonie, które automatyzuje przygotowanie plików do druku wielkoformatowego. Zastąpiło ręczny etap procesu w drukarni i jest tam używane produkcyjnie na co dzień. Samo dobiera rozstaw celowników rejestracyjnych i dodaje ramkę na zagięcie, zachowując profil CMYK i DPI pliku.",
+        de: "Ein Python-Tool, das die Druckvorbereitung für den Großformatdruck automatisiert. Es hat einen manuellen Arbeitsschritt im Workflow der Druckerei ersetzt und wird dort täglich im Produktivbetrieb eingesetzt. Es setzt Passmarken und einen Falzrahmen automatisch, basierend auf der Bannergröße, unter Beibehaltung der CMYK-Profile und DPI."
       }
     },
     {
