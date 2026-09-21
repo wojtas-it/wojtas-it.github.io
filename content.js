@@ -13,14 +13,14 @@
 window.SITE_CONTENT = {
   meta: {
     title: {
-      en: "Filip Wojtasiński - Portfolio",
-      pl: "Filip Wojtasiński - Portfolio",
-      de: "Filip Wojtasiński - Portfolio"
+      en: "wojtas.it - IT services",
+      pl: "wojtas.it - usługi informatyczne",
+      de: "wojtas.it - IT-Dienstleistungen"
     },
     description: {
-      en: "Portfolio of Filip Wojtasiński: full-stack web, mobile, machine learning, game development, and embedded & IoT projects.",
-      pl: "Portfolio Filipa Wojtasińskiego: projekty full-stack web, mobile, machine learning, game dev oraz embedded i IoT.",
-      de: "Portfolio von Filip Wojtasiński: Embedded und IoT, Full-Stack und Mobile Web, Game Development sowie Machine Learning."
+      en: "wojtas.it: online stores, websites, and custom automation tools, from idea to production.",
+      pl: "wojtas.it: sklepy internetowe, strony WWW i automatyzacje szyte na miarę, od pomysłu po wdrożenie produkcyjne.",
+      de: "wojtas.it: Online-Shops, Webseiten und maßgeschneiderte Automatisierungslösungen, von der Idee bis zum Produktivbetrieb."
     }
   },
 
@@ -32,17 +32,13 @@ window.SITE_CONTENT = {
       navAbout: "About",
       navContact: "Contact",
       langSwitcherLabel: "Language",
-      heroRole: "Full-stack & mobile / ML / embedded",
+      heroRole: "Online stores, websites & automation",
       factsLabelLocation: "Location",
-      factsLabelStatus: "Status",
-      factsLabelEducation: "Education",
       factsLabelFocus: "Focus",
       factsLabelLanguages: "Languages",
       factsLabelStack: "Stack",
-      factsValueLocation: "Tarnów, Poland (open to Kraków, Warsaw, Wrocław, remote)",
-      factsValueStatus: "Available from 13 July 2026",
-      factsValueEducation: "Final semester from October 2026, Tarnów University, Computer Science, spec. Intelligent Systems Engineering (embedded)",
-      factsValueFocus: "Full-stack, mobile, machine learning, embedded & IoT",
+      factsValueLocation: "Tarnów, Poland - remote work for clients anywhere",
+      factsValueFocus: "Online stores, websites, automation, mobile apps, embedded",
       factsValueLanguages: "Polish (native), English B2, German A2",
       factsValueStack: "C/C++, Python, JS/TS, C# | React Native, Node.js, ESP32, KiCad | PostgreSQL, MongoDB, MATLAB",
       projectsHeading: "Projects",
@@ -70,17 +66,13 @@ window.SITE_CONTENT = {
       navAbout: "O mnie",
       navContact: "Kontakt",
       langSwitcherLabel: "Język",
-      heroRole: "Full-stack i mobile / ML / embedded",
+      heroRole: "Sklepy internetowe, strony WWW i automatyzacje",
       factsLabelLocation: "Lokalizacja",
-      factsLabelStatus: "Status",
-      factsLabelEducation: "Edukacja",
       factsLabelFocus: "Specjalizacja",
       factsLabelLanguages: "Języki",
       factsLabelStack: "Stack",
-      factsValueLocation: "Tarnów (otwarty na Kraków, Warszawę, Wrocław, pracę zdalną)",
-      factsValueStatus: "Dostępny od 13 lipca 2026",
-      factsValueEducation: "Od października 2026 ostatni semestr, Akademia Tarnowska, Informatyka, spec. Inżynieria Systemów Inteligentnych (embedded)",
-      factsValueFocus: "Full-stack, mobile, machine learning, embedded i IoT",
+      factsValueLocation: "Tarnów - praca zdalna dla klientów z całej Polski i nie tylko",
+      factsValueFocus: "Sklepy internetowe, strony WWW, automatyzacje, aplikacje mobilne, embedded",
       factsValueLanguages: "polski (natywny), angielski B2, niemiecki A2",
       factsValueStack: "C/C++, Python, JS/TS, C# | React Native, Node.js, ESP32, KiCad | PostgreSQL, MongoDB, MATLAB",
       projectsHeading: "Projekty",
@@ -108,17 +100,13 @@ window.SITE_CONTENT = {
       navAbout: "Über mich",
       navContact: "Kontakt",
       langSwitcherLabel: "Sprache",
-      heroRole: "Full-Stack und Mobile / ML / Embedded",
+      heroRole: "Online-Shops, Webseiten und Automatisierung",
       factsLabelLocation: "Standort",
-      factsLabelStatus: "Status",
-      factsLabelEducation: "Ausbildung",
       factsLabelFocus: "Schwerpunkte",
       factsLabelLanguages: "Sprachen",
       factsLabelStack: "Stack",
-      factsValueLocation: "Tarnów (offen für Krakau, Warschau, Breslau, Remote)",
-      factsValueStatus: "Verfügbar ab 13. Juli 2026",
-      factsValueEducation: "Ab Oktober 2026 letztes Semester, Akademia Tarnowska, Informatik, Sp. Intelligente Systemtechnik (Embedded)",
-      factsValueFocus: "Full-Stack, Mobile, Machine Learning, Embedded und IoT",
+      factsValueLocation: "Tarnów, Polen - Remote-Arbeit für Kunden überall",
+      factsValueFocus: "Online-Shops, Webseiten, Automatisierung, Mobile Apps, Embedded",
       factsValueLanguages: "Polnisch (Muttersprache), Englisch B2, Deutsch A2",
       factsValueStack: "C/C++, Python, JS/TS, C# | React Native, Node.js, ESP32, KiCad | PostgreSQL, MongoDB, MATLAB",
       projectsHeading: "Projekte",
@@ -141,12 +129,16 @@ window.SITE_CONTENT = {
     }
   },
 
-  heroName: "Filip Wojtasiński",
+  heroName: {
+    en: "wojtas.it - IT services",
+    pl: "wojtas.it - usługi informatyczne",
+    de: "wojtas.it - IT-Dienstleistungen"
+  },
 
   intro: {
-    en: "I'm Filip. I build working software across full-stack web and mobile, machine learning, game development, and embedded & IoT. I recently built an automation tool for a large-format print shop that's in daily production use, and I'm looking for a junior developer role from 13 July. Based in Tarnów, open to Kraków, Warsaw, Wrocław, and remote.",
-    pl: "Nazywam się Filip. Buduję działające oprogramowanie w kilku obszarach naraz: full-stack web i mobile, machine learning, game dev oraz embedded i IoT. Ostatnio zbudowałem narzędzie automatyzujące pracę drukarni wielkoformatowej, używane tam produkcyjnie na co dzień, i szukam pracy na poziomie junior od 13 lipca. Mieszkam w Tarnowie, jestem otwarty na Kraków, Warszawę, Wrocław i pracę zdalną.",
-    de: "Ich bin Filip. Ich baue funktionsfähige Software in verschiedenen Bereichen: Full-Stack Web und Mobile, Machine Learning, Game Development sowie Embedded und IoT. Kürzlich habe ich ein Automatisierungstool für eine Großformatdruckerei entwickelt, das dort täglich im Produktivbetrieb eingesetzt wird, und suche eine Junior-Stelle ab dem 13. Juli. Ich wohne in Tarnów und bin offen für Krakau, Warschau, Breslau und Remote."
+    en: "I build online stores, websites, and custom automation tools, from a simple landing page to systems that tie a web app to custom hardware. I recently built an automation tool for a large-format print shop that's in daily production use there. I work remotely, based in Tarnów, Poland.",
+    pl: "Tworzę sklepy internetowe, strony WWW oraz automatyzacje dopasowane do potrzeb klienta, od prostej wizytówki po systemy łączące aplikację webową z własnym sprzętem. Ostatnio zbudowałem narzędzie automatyzujące pracę drukarni wielkoformatowej, które jest tam używane produkcyjnie na co dzień. Pracuję zdalnie, z bazą w Tarnowie.",
+    de: "Ich baue Online-Shops, Webseiten und maßgeschneiderte Automatisierungslösungen, von einer einfachen Landingpage bis zu Systemen, die eine Web-App mit eigener Hardware verbinden. Kürzlich habe ich ein Automatisierungstool für eine Großformatdruckerei entwickelt, das dort täglich im Produktivbetrieb eingesetzt wird. Ich arbeite remote, mit Sitz in Tarnów."
   },
 
   about: {

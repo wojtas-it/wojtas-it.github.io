@@ -17,9 +17,6 @@
     }
     if (stored && LANGS.indexOf(stored) !== -1) return stored;
 
-    var browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
-    if (LANGS.indexOf(browserLang) !== -1) return browserLang;
-
     return "en";
   }
 

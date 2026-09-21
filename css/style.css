@@ -238,23 +238,6 @@ section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
   line-height: 1.5;
 }
 
-.facts-status {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--accent);
-}
-
-.facts-status::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-  box-shadow: 0 0 0 3px var(--accent-bg);
-}
-
 /* ===== Filters ===== */
 .filters {
   display: flex;
