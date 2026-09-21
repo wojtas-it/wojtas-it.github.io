@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Uranos Eye - profesjonalne mycie elewacji, dachów i paneli fotowoltaicznych dronem. Bez rusztowań. Wojnicz, cała Polska.">
+<meta name="robots" content="noindex, nofollow">
+<title>Uranos Eye</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ink:#0D1B2A; --navy:#1B263B; --deep:#070F19; --steel:#415A77; --mist:#8FA1B6;
+  --pale:#B9C5D4; --alab:#E0E1DD; --white:#FFFFFF; --amber:#E9A23B; --amber-d:#845311;
+  --dsp:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ink);color:var(--alab);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.dsp{font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-weight:800;text-wrap:balance}
+.mono{font-family:var(--mono)}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,4vw,64px)}
+section{padding-block:clamp(56px,8vw,104px)}
+.light{background:var(--alab);color:var(--ink)}
+.mid{background:var(--navy)}
+
+/* etykiety i nagłówki */
+.lbl{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.lbl i{display:block;width:40px;height:2px;background:var(--amber)}
+.light .lbl i{background:var(--amber-d)}
+.lbl span{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
+.light .lbl span{color:var(--amber-d)}
+h2{margin:0 0 18px;font-size:clamp(27px,4.4vw,46px);line-height:1.02;color:var(--white)}
+.light h2{color:var(--ink)}
+.p{margin:0 0 16px;font-size:clamp(15px,1.7vw,17px);line-height:1.6;color:var(--mist);max-width:64ch}
+.light .p{color:var(--steel)}
+
+/* przyciski */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;font-weight:600;font-size:15px;text-decoration:none;min-height:48px;transition:transform .25s,background-color .25s,border-color .25s,color .25s}
+.btn-a{background:var(--amber);color:var(--ink)}
+.btn-a:hover{background:#F5BE68;color:var(--ink);transform:translateY(-2px)}
+.btn-b{border:1px solid var(--mist);color:var(--alab)}
+.btn-b:hover{border-color:var(--white);color:var(--white);transform:translateY(-2px)}
+.light .btn-b{border-color:var(--steel);color:var(--ink)}
+.light .btn-b:hover{border-color:var(--ink);color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.tlink{color:var(--amber-d);font-weight:600;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+
+/* pasek postępu */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(65,90,119,.3);z-index:70}
+#prog i{display:block;height:100%;width:0;background:var(--amber)}
+
+/* nawigacja */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(13,27,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(65,90,119,.5)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand span{font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-weight:800;font-size:19px;letter-spacing:.13em;color:var(--white)}
+.menu{display:flex;gap:30px}
+.menu a{color:var(--alab);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s}
+.menu a:hover,.menu a.on{color:var(--amber)}
+.navr{display:flex;align-items:center;gap:18px}
+.navtel{font-family:var(--mono);font-size:13.5px;color:var(--alab);text-decoration:none;white-space:nowrap}
+.navtel:hover{color:var(--amber)}
+.burger{display:none;width:46px;height:46px;background:none;border:0;align-items:center;justify-content:center;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:600px;height:86svh;overflow:hidden;display:flex;align-items:flex-end}
+.hero-m{position:absolute;inset:0;will-change:transform}
+.hero-m video,.hero-m img{width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+.hero-s{position:absolute;inset:0;background:
+  linear-gradient(96deg,rgba(13,27,42,.95) 0%,rgba(13,27,42,.8) 34%,rgba(13,27,42,.22) 66%,rgba(13,27,42,0) 100%),
+  linear-gradient(180deg,rgba(13,27,42,.55) 0%,transparent 22%,transparent 64%,var(--ink) 100%)}
+.hero-c{position:relative;width:100%;padding-bottom:clamp(30px,6vh,60px);will-change:transform,opacity}
+.eb{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.eb i{display:block;height:2px;width:0;background:var(--amber);animation:rule 1.1s .3s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rule{to{width:72px}}
+.eb span{font-family:var(--mono);font-size:clamp(10px,1.5vw,12px);letter-spacing:.32em;text-transform:uppercase;color:var(--amber)}
+h1{margin:0 0 22px;font-size:clamp(36px,7.6vw,88px);line-height:.93;color:var(--white);letter-spacing:.005em}
+.lead{margin:0 0 8px;font-size:clamp(17px,2.2vw,22px);line-height:1.4;color:var(--white);font-weight:500;max-width:24ch}
+.sub{margin:0 0 30px;font-size:clamp(14.5px,1.8vw,18px);line-height:1.5;color:var(--pale);max-width:36ch}
+
+/* filary */
+.pil-w{background:var(--navy);border-bottom:1px solid rgba(65,90,119,.5)}
+.pil-g{display:grid;grid-template-columns:repeat(4,1fr)}
+.pil{display:flex;gap:16px;padding:26px 24px 26px 0;border-right:1px solid rgba(65,90,119,.5)}
+.pil:last-child{border-right:0}
+.pil+.pil{padding-left:24px}
+.pil svg{flex:0 0 auto;stroke:var(--amber)}
+.pil b{display:block;font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-size:12.5px;letter-spacing:.13em;color:var(--white);margin-bottom:6px}
+.pil p{margin:0;font-size:13.5px;line-height:1.45;color:var(--pale)}
+
+/* przed / po */
+.ba-stage{position:relative;height:250svh;background:var(--alab);color:var(--ink)}
+.ba-st{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-block:24px}
+.ba-f{position:relative;aspect-ratio:16/9;max-height:52svh;width:100%;overflow:hidden;background:#111}
+.ba-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-b{position:absolute;inset:0;width:50%;overflow:hidden;will-change:width}
+.ba-b .in{position:absolute;inset:0;width:100vw;max-width:none}
+.ba-b img{filter:grayscale(.7) sepia(.3) saturate(.7) brightness(.7) contrast(1.05)}
+.ba-h{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(119,141,169,.2) 0 14px,transparent 14px 28px)}
+.ba-l{position:absolute;top:0;bottom:0;width:2px;background:var(--amber);left:50%;transform:translateX(-1px);will-change:left}
+.ba-k{position:absolute;top:50%;left:50%;width:54px;height:54px;border-radius:50%;background:var(--amber);display:grid;place-items:center;transform:translate(-50%,-50%);will-change:left}
+.tag{position:absolute;top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;padding:6px 11px}
+.tag-l{left:14px;background:var(--ink);color:var(--white)}
+.tag-r{right:14px;background:var(--amber);color:var(--ink)}
+.ba-n{margin:14px 0 0;font-size:13px;line-height:1.5;color:var(--steel)}
+
+/* kafle usług */
+.feat{display:flex;background:var(--navy);border:1px solid rgba(65,90,119,.6);text-decoration:none;margin-bottom:18px;overflow:hidden;transition:border-color .35s}
+.feat:hover{border-color:var(--amber)}
+.feat img{width:50%;height:auto;min-height:280px;object-fit:cover}
+.feat-t{padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;justify-content:center}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tile{background:var(--navy);border:1px solid rgba(65,90,119,.6);text-decoration:none;display:block;color:inherit;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
+.tile:hover{transform:translateY(-6px);border-color:var(--amber)}
+.tile-i{position:relative;aspect-ratio:16/10;overflow:hidden}
+.tile-i img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .tile-i img{transform:scale(1.05)}
+.viz{position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;background:rgba(13,27,42,.8);color:var(--pale);padding:3px 7px}
+.tile-t{padding:20px 22px 24px}
+.tile-t b{display:block;font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-size:15.5px;color:var(--white);margin-bottom:7px}
+.tile-t p{margin:0;font-size:13.5px;line-height:1.5;color:var(--mist)}
+
+/* metoda */
+.met{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px);align-items:center}
+.diag{background:var(--ink);padding:clamp(20px,3vw,40px);border:1px solid var(--steel)}
+.diag .ink{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.diag.on .ink{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s cubic-bezier(.3,.7,.2,1)}
+.diag.on .d2{transition-delay:.3s}.diag.on .d3{transition-delay:.6s}.diag.on .d4{transition-delay:.9s}
+.diag text{opacity:0}
+.diag.on text{opacity:1;transition:opacity .6s 1.1s}
+.dstat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px;border-top:1px solid var(--steel);padding-top:20px}
+.dstat b{display:block;font-family:var(--mono);font-size:16px;color:var(--white);font-weight:600}
+.dstat span{font-size:12.5px;color:var(--mist);line-height:1.45}
+
+/* pasmo foto */
+.band{position:relative;height:clamp(300px,42vw,420px);overflow:hidden;padding:0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.band-s{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,42,.92) 0%,rgba(13,27,42,.5) 48%,rgba(13,27,42,.1) 100%)}
+.band-c{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center}
+
+/* listy */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(24px,3vw,46px)}
+.atut{border-top:1px solid var(--steel);padding:22px 0;display:flex;gap:16px}
+.atut .n{font-family:var(--mono);font-size:13px;color:var(--amber);padding-top:3px}
+.atut h3{margin:0 0 7px;font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-size:16px;font-weight:800;color:var(--white);letter-spacing:.04em}
+.atut p{margin:0;font-size:14.5px;line-height:1.55;color:var(--mist)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);position:relative}
+.step .ic{width:64px;height:64px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin-bottom:20px}
+.step:last-child .ic{background:var(--amber)}
+.step .n{font-family:var(--mono);font-size:13px;color:var(--amber-d);margin-bottom:8px}
+.step h3{margin:0 0 8px;font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-size:18px;font-weight:800}
+.step p{margin:0;font-size:14.5px;line-height:1.55;color:var(--steel)}
+.why{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,56px);align-items:center}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.chk{display:flex;gap:13px;padding:16px 0;border-top:1px solid var(--steel);align-items:center;font-size:15.5px;color:var(--alab)}
+.chk svg{flex:0 0 auto;stroke:var(--amber)}
+
+/* realizacje */
+.real{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rc{background:var(--white)}
+.ph{background-color:#D5D7D2;background-image:repeating-linear-gradient(45deg,rgba(65,90,119,.13) 0 12px,transparent 12px 24px);border:1px dashed var(--steel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:16px}
+.phc{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--white);background:var(--ink);padding:4px 9px}
+.rc-t{padding:20px 22px 24px}
+.rc-t .m{font-family:var(--mono);font-size:11.5px;color:var(--steel);margin-bottom:9px}
+.rc-t h3{margin:0 0 10px;font-family:var(--dsp);font-variation-settings:'wdth' 118;text-transform:uppercase;font-size:18px;font-weight:800}
+.rcs{display:flex;gap:22px;border-top:1px solid var(--alab);padding-top:13px}
+.rcs b{display:block;font-family:var(--mono);font-size:15px}
+.rcs span{font-size:12px;color:var(--steel)}
+.note{background:var(--ink);color:var(--alab);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;justify-content:center}
+
+/* kontakt */
+.cta{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,4vw,64px);align-items:start}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fl{display:flex;flex-direction:column;gap:7px}
+.fl.full{grid-column:1/-1}
+.fl label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+.fl input,.fl select,.fl textarea{background:var(--ink);border:1px solid var(--steel);color:var(--alab);padding:13px 14px;font-family:var(--body);font-size:15px;min-height:48px;border-radius:0}
+.fl textarea{min-height:104px;resize:vertical}
+.fl input::placeholder,.fl textarea::placeholder{color:#6B7E96}
+.cons{grid-column:1/-1;display:flex;gap:11px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--mist)}
+.cons input{width:20px;height:20px;flex:0 0 auto;margin-top:1px;accent-color:var(--amber)}
+.kv{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--steel)}
+.kv span{font-size:14px;color:var(--mist)}
+.kv a,.kv b{font-family:var(--mono);font-size:14.5px;color:var(--white);text-decoration:none;font-weight:500;text-align:right}
+.kv a:hover{color:var(--amber)}
+
+/* stopka */
+footer{background:var(--deep);padding-block:clamp(40px,5vw,60px) 0}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:clamp(24px,3vw,48px);padding-bottom:40px;border-bottom:1px solid var(--navy)}
+.fh{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:18px}
+.fl-n{display:flex;flex-direction:column;gap:11px}
+.fl-n a{color:var(--mist);text-decoration:none;font-size:14px}
+.fl-n a:hover{color:var(--amber)}
+.soc{display:flex;gap:11px}
+.soc a{width:44px;height:44px;border:1px solid var(--navy);display:grid;place-items:center}
+.soc a:hover{border-color:var(--amber)}
+.fbot{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:#7C8EA3}
+.fbot a{color:#7C8EA3;text-decoration:none}
+
+/* odsłanianie */
+.js .rv{opacity:0;transform:translateY(18px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .stg>*{opacity:0;transform:translateY(18px)}
+.js .stg.in>*{opacity:1;transform:none;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.js .stg.in>*:nth-child(2){transition-delay:.06s}.js .stg.in>*:nth-child(3){transition-delay:.12s}
+.js .stg.in>*:nth-child(4){transition-delay:.18s}.js .stg.in>*:nth-child(5){transition-delay:.24s}
+.js .stg.in>*:nth-child(6){transition-delay:.3s}.js .stg.in>*:nth-child(7){transition-delay:.36s}
+.js .stg.in>*:nth-child(8){transition-delay:.42s}
+
+@media (max-width:980px){
+  .menu{display:none}.burger{display:flex}
+  .pil-g{grid-template-columns:1fr 1fr}
+  .pil{border-right:0;border-bottom:1px solid rgba(65,90,119,.5);padding:20px 0}
+  .pil+.pil{padding-left:0}
+  .pil:nth-child(odd){padding-right:16px}.pil:nth-child(even){padding-left:16px}
+  .tiles{grid-template-columns:1fr 1fr}
+  .feat{flex-direction:column}.feat img{width:100%;min-height:0;aspect-ratio:16/9}
+  .met,.why,.cta{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .real{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .ba-stage{height:210svh}
+}
+@media (max-width:620px){
+  .navtel{display:none}
+  .tiles,.grid3,.steps,.checks,.form,.fgrid{grid-template-columns:1fr}
+  .btn{width:100%}
+  .pil-g{grid-template-columns:1fr}
+  .pil:nth-child(odd),.pil:nth-child(even){padding-left:0;padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .js .rv,.js .stg>*{opacity:1;transform:none}
+  .eb i{width:72px}
+  .ba-stage{height:auto}.ba-st{position:static;height:auto;padding-block:48px}
+  .diag .ink{stroke-dashoffset:0}.diag text{opacity:1}
+}
+</style>
+
+</head>
+<body>
+<div id="prog"><i></i></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#E0E1DD" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 4h9M23 4h9M4 4v3M30 4v3"/><circle cx="17" cy="11" r="5.2"/><path d="M11 5l4.6 4.2M23 5l-4.6 4.2"/></svg>
+      <span>Uranos Eye</span>
+    </a>
+    <nav class="menu" aria-label="Główna">
+      <a href="#top" class="on">Strona główna</a>
+      <a href="#o-nas">O nas</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="#realizacje">Realizacje</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="navr">
+      <a class="navtel" href="tel:+48794724244">+48 794 724 244</a>
+      <a class="btn btn-a" href="#kontakt" style="padding:11px 20px;font-size:13.5px;min-height:44px">Bezpłatna wycena</a>
+      <button class="burger" type="button" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0E1DD" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" style="padding:0">
+  <div class="hero-m" id="hm">
+    <video autoplay muted loop playsinline preload="metadata" poster="img/hero-poster.jpg" aria-label="Dron Uranos Eye myjący elewację budynku">
+      <source src="img/hero.mp4" type="video/mp4">
+      <img src="img/hero-poster.jpg" alt="Dron Uranos Eye myjący elewację budynku">
+    </video>
+  </div>
+  <div class="hero-s"></div>
+  <div class="hero-c wrap" id="hc">
+    <div class="eb"><i></i><span>Nowa jakość</span></div>
+    <h1 class="dsp">W myciu<br>wysokościowym</h1>
+    <p class="lead">Profesjonalne mycie elewacji dronem.</p>
+    <p class="sub">Bez rusztowań. Bez przestojów. Bez kompromisów.</p>
+    <div class="btns">
+      <a class="btn btn-a" href="#uslugi">Zobacz ofertę
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-b" href="#o-nas">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.4l6 3.6-6 3.6z" fill="currentColor"/></svg>
+        Zobacz film
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="pil-w">
+  <div class="wrap">
+    <div class="pil-g stg">
+      <div class="pil"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6l8 3.2v5.6c0 5-3.4 9.2-8 10.4-4.6-1.2-8-5.4-8-10.4V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div><b>Bezpieczeństwo</b><p>Zero ryzyka pracy na wysokości</p></div></div>
+      <div class="pil"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 6.6V12l3.6 2.2"/></svg><div><b>Oszczędność czasu</b><p>Szybko, efektywnie i bez przestojów</p></div></div>
+      <div class="pil"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8s6.2 6.4 6.2 10.6a6.2 6.2 0 11-12.4 0C5.8 9.2 12 2.8 12 2.8z"/></svg><div><b>Czystość i efekt</b><p>Docieramy dalej, myjemy skutecznie</p></div></div>
+      <div class="pil"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c0 8.4-4.6 13.2-10.4 13.2A5.6 5.6 0 014 11.6C4 6.6 10.2 4 20 4z"/><path d="M4.6 20c2.4-4.6 6-7.4 10.4-9"/></svg><div><b>Eko technologia</b><p>Mniejsze zużycie wody i środków chemicznych</p></div></div>
+    </div>
+  </div>
+</div>
+
+<section class="ba-stage" id="efekt" style="padding:0">
+  <div class="ba-st">
+    <div class="wrap" style="padding-bottom:20px">
+      <div class="lbl"><i></i><span>Efekt</span></div>
+      <h2 class="dsp">Różnica, którą widać z ulicy</h2>
+      <p class="p">Glony, mech i osady zabierają elewacji kilka lat wyglądu. Mycie wysokociśnieniowe z drona usuwa je w jeden dzień - bez rusztowania i bez wjazdu ciężkiego sprzętu na posesję.</p>
+    </div>
+    <div class="wrap">
+      <div class="ba-f" id="baf">
+        <img src="img/foto-elewacja.jpg" alt="Elewacja domu po myciu dronem">
+        <div class="ba-b" id="bab"><div class="in"><img src="img/foto-elewacja.jpg" alt="Symulacja stanu przed myciem"><div class="ba-h"></div></div></div>
+        <span class="tag tag-l">PRZED · MATERIAŁ W PRZYGOTOWANIU</span>
+        <span class="tag tag-r">PO</span>
+        <div class="ba-l" id="bal"></div>
+        <div class="ba-k" id="bak"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D1B2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></div>
+      </div>
+      <p class="ba-n">Lewa strona to <strong>symulacja na tym samym zdjęciu</strong> - pokazuje działanie suwaka, nie rzeczywisty efekt. Prawdziwą parę przed/po sfotografujemy na najbliższej realizacji.</p>
+    </div>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+      <div class="rv">
+        <div class="lbl"><i></i><span>Usługi</span></div>
+        <h2 class="dsp">Kompleksowe mycie<br>i impregnacja dronem</h2>
+        <p class="p" style="margin-bottom:0">Nowoczesna technologia, która pozwala dotrzeć tam, gdzie tradycyjne metody są kosztowne, czasochłonne i niebezpieczne.</p>
+      </div>
+      <a class="btn btn-b rv" href="#kontakt" style="padding:14px 24px;font-size:14px">Zapytaj o wycenę</a>
+    </div>
+
+    <a class="feat rv" href="#kontakt">
+      <img src="img/foto-hero.jpg" alt="Mycie elewacji dronem - realizacja Uranos Eye">
+      <div class="feat-t">
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6.5L12 3l8 3.5V21"/><path d="M8 21v-5h8v5M8 9.5h2M14 9.5h2M8 12.8h2M14 12.8h2"/></svg>
+          <span class="mono" style="font-size:11px;letter-spacing:.2em;color:#E9A23B">USŁUGA GŁÓWNA</span>
+        </div>
+        <h3 class="dsp" style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);color:#fff;line-height:1">Mycie elewacji</h3>
+        <p style="margin:0 0 20px;font-size:16px;line-height:1.55;color:#B9C5D4;max-width:44ch">Usuwanie zabrudzeń, glonów, mchów oraz osadów z każdego rodzaju elewacji.</p>
+        <span style="color:#E9A23B;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:9px">Poznaj szczegóły
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <div class="tiles stg">
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-dach.jpg" alt="Mycie dachu dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Mycie dachów</b><p>Bezpieczne czyszczenie dachówek, blach i innych pokryć dachowych.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-panele.jpg" alt="Mycie paneli fotowoltaicznych dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Panele fotowoltaiczne</b><p>Skuteczne usuwanie zabrudzeń poprawiające wydajność instalacji PV.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-szklarnia.jpg" alt="Mycie szklarni dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Mycie szklarni</b><p>Dokładne czyszczenie konstrukcji i przeszkleń bez konieczności montażu rusztowań.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-billboard.jpg" alt="Mycie billboardu dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Billboardy i banery</b><p>Przywracamy estetyczny wygląd reklam oraz konstrukcji wielkoformatowych.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-hala.jpg" alt="Mycie elewacji hali magazynowej dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Hale i magazyny</b><p>Czyszczenie elewacji oraz wysokich elementów obiektów przemysłowych.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-komin.jpg" alt="Mycie komina przemysłowego dronem"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Kominy przemysłowe</b><p>Mycie trudno dostępnych konstrukcji z zachowaniem najwyższych standardów bezpieczeństwa.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-impreg-dach.jpg" alt="Dachówka po impregnacji hydrofobowej"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Impregnacja dachów</b><p>Zabezpieczenie powierzchni przed wilgocią, zabrudzeniami oraz rozwojem mchów i glonów.</p></div></a>
+      <a class="tile" href="#kontakt"><div class="tile-i"><img src="img/u-impreg-elew.jpg" alt="Elewacja po impregnacji hydrofobowej"><span class="viz">wizualizacja</span></div><div class="tile-t"><b>Impregnacja elewacji</b><p>Hydrofobowa ochrona elewacji wydłużająca jej trwałość i estetyczny wygląd.</p></div></a>
+    </div>
+
+    <div class="rv" style="background:var(--navy);border:1px solid rgba(65,90,119,.6);padding:clamp(22px,3vw,32px);margin-top:18px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div>
+        <div class="mono" style="font-size:11px;letter-spacing:.2em;color:#E9A23B;text-transform:uppercase;margin-bottom:9px">Potrzebujesz nietypowego czyszczenia?</div>
+        <h3 class="dsp" style="margin:0 0 7px;font-size:22px;color:#fff">Inne prace myjące na wysokości</h3>
+        <p style="margin:0;font-size:15px;color:#8FA1B6">Realizujemy również indywidualne zlecenia z wykorzystaniem dronów.</p>
+      </div>
+      <a class="btn btn-a" href="#kontakt">Skontaktuj się z nami</a>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="o-nas">
+  <div class="wrap met">
+    <div class="rv">
+      <div class="lbl"><i></i><span>O nas</span></div>
+      <h2 class="dsp">Nowoczesna technologia.<br>Profesjonalne rezultaty.</h2>
+      <p class="p" style="color:#2A3A4D">Specjalizujemy się w myciu elewacji, dachów oraz paneli fotowoltaicznych z wykorzystaniem nowoczesnych dronów wysokociśnieniowych.</p>
+      <p class="p">Dzięki tej technologii realizujemy zlecenia szybciej, bezpieczniej i bez konieczności montażu rusztowań czy korzystania z podnośników. Korzystamy z profesjonalnego sprzętu oraz specjalnej chemii, a każde zlecenie wykonują wykwalifikowani piloci dronów.</p>
+      <div class="btns" style="margin-top:22px"><a class="btn btn-b" href="#kontakt">Bezpłatna wycena</a></div>
+    </div>
+    <div class="diag rv" id="diag">
+      <div class="mono" style="font-size:11px;letter-spacing:.22em;color:#E9A23B;text-transform:uppercase;margin-bottom:8px">Jak to działa</div>
+      <h3 class="dsp" style="margin:0 0 6px;font-size:23px;color:#fff">Dron na uwięzi</h3>
+      <p style="margin:0 0 22px;font-size:14.5px;line-height:1.55;color:#8FA1B6;max-width:56ch">Woda płynie z ziemi wężem pod ciśnieniem, więc maszyny nie ogranicza pojemność zbiornika.</p>
+      <svg viewBox="0 0 620 300" style="width:100%;height:auto" role="img" aria-label="Schemat: pompa na ziemi tłoczy wodę przewodem do drona, który myje elewację budynku">
+        <rect class="ink d1" x="470" y="18" width="130" height="226" fill="none" stroke="#415A77" stroke-width="1.6" style="--len:712"/>
+        <path class="ink d1" d="M470 18 L535 2 L600 18" fill="none" stroke="#415A77" stroke-width="1.6" style="--len:134"/>
+        <rect class="ink d2" x="492" y="52" width="34" height="42" fill="none" stroke="#415A77" stroke-width="1.3" style="--len:152"/>
+        <rect class="ink d2" x="546" y="52" width="34" height="42" fill="none" stroke="#415A77" stroke-width="1.3" style="--len:152"/>
+        <rect class="ink d2" x="492" y="124" width="34" height="42" fill="none" stroke="#415A77" stroke-width="1.3" style="--len:152"/>
+        <rect class="ink d2" x="546" y="124" width="34" height="42" fill="none" stroke="#415A77" stroke-width="1.3" style="--len:152"/>
+        <path class="ink d2" d="M234 70h34M296 70h34M240 70v8M324 70v8" stroke="#E0E1DD" stroke-width="2.6" stroke-linecap="round" fill="none" style="--len:96"/>
+        <rect class="ink d2" x="266" y="61" width="48" height="20" rx="2" fill="none" stroke="#E0E1DD" stroke-width="2.4" style="--len:136"/>
+        <path class="ink d2" d="M268 81v9M292 81v9M262 90h56" stroke="#E0E1DD" stroke-width="2.6" stroke-linecap="round" fill="none" style="--len:74"/>
+        <path class="ink d3" d="M320 92 C 380 96, 410 104, 462 118" stroke="#E9A23B" stroke-width="2.8" fill="none" stroke-linecap="round" style="--len:150"/>
+        <path class="ink d3" d="M462 118 l-10 -7 M462 118 l-10 7" stroke="#E9A23B" stroke-width="2.8" fill="none" stroke-linecap="round" style="--len:26"/>
+        <path class="ink d4" d="M262 92 C 190 130, 150 190, 126 236" stroke="#8FA1B6" stroke-width="2.4" fill="none" stroke-linecap="round" style="--len:200"/>
+        <rect class="ink d4" x="42" y="196" width="112" height="48" fill="none" stroke="#E9A23B" stroke-width="1.6" style="--len:320"/>
+        <circle class="ink d4" cx="70" cy="220" r="11" fill="none" stroke="#E9A23B" stroke-width="1.8" style="--len:70"/>
+        <path class="ink d4" d="M96 210h44M96 220h34M96 230h44" stroke="#8FA1B6" stroke-width="1.5" stroke-linecap="round" fill="none" style="--len:122"/>
+        <path class="ink d4" d="M20 268h580" stroke="#415A77" stroke-width="1.6" fill="none" style="--len:580"/>
+        <text x="98" y="286" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8FA1B6">pompa i zbiornik</text>
+        <text x="290" y="120" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8FA1B6">dron wysokociśnieniowy</text>
+        <text x="535" y="270" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8FA1B6">obiekt</text>
+      </svg>
+      <div class="dstat">
+        <div><b>Bez rusztowań</b><span>Brak kosztownego montażu i utrudnień</span></div>
+        <div><b>Wysokie ciśnienie</b><span>Skuteczne usuwanie zabrudzeń, mchów i glonów</span></div>
+        <div><b>Dobrana chemia</b><span>Preparaty dopasowane do rodzaju powierzchni</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <img src="img/foto-pasmo.jpg" alt="Dron Uranos Eye pracujący nad dachem budynku">
+  <div class="band-s"></div>
+  <div class="wrap band-c">
+    <h2 class="dsp" style="margin-bottom:14px">Docieramy dalej,<br>myjemy skutecznie</h2>
+    <p style="margin:0;font-size:clamp(15px,1.9vw,18px);line-height:1.5;color:#D5DCE5;max-width:44ch">Tam, gdzie tradycyjne metody są kosztowne, czasochłonne i niebezpieczne.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="lbl"><i></i><span>Nasze atuty</span></div>
+      <h2 class="dsp" style="margin-bottom:36px">Dlaczego warto z nami współpracować?</h2>
+    </div>
+    <div class="grid3 stg">
+      <div class="atut"><span class="n">01</span><div><h3>Oszczędność czasu</h3><p>Szybka realizacja nawet na dużych obiektach.</p></div></div>
+      <div class="atut"><span class="n">02</span><div><h3>Bezpieczeństwo</h3><p>Brak pracy człowieka na wysokości.</p></div></div>
+      <div class="atut"><span class="n">03</span><div><h3>Bez rusztowań</h3><p>Bez kosztownego montażu i utrudnień.</p></div></div>
+      <div class="atut"><span class="n">04</span><div><h3>Wysokie ciśnienie</h3><p>Skuteczne usuwanie zabrudzeń, mchów i glonów.</p></div></div>
+      <div class="atut"><span class="n">05</span><div><h3>Profesjonalna chemia</h3><p>Preparaty dopasowane do rodzaju powierzchni.</p></div></div>
+      <div class="atut"><span class="n">06</span><div><h3>Wykwalifikowani piloci</h3><p>Doświadczeni piloci z uprawnieniami.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px">
+      <div class="lbl"><i></i><span>Proces</span></div>
+      <h2 class="dsp">Jak wygląda współpraca?</h2>
+    </div>
+    <div class="steps stg">
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.4 16.9v2.8a1.9 1.9 0 01-2.1 1.9 18.6 18.6 0 01-8.1-2.9 18.3 18.3 0 01-5.6-5.6A18.6 18.6 0 012.7 5a1.9 1.9 0 011.9-2.1h2.8a1.9 1.9 0 011.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 01-.4 2l-1.2 1.2a15 15 0 005.6 5.6l1.2-1.2a1.9 1.9 0 012-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 011.6 2z"/></svg></div><div class="n">01</div><h3>Kontakt</h3><p>Skontaktuj się z nami telefonicznie lub przez formularz.</p></div>
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.6H6.6a2 2 0 00-2 2v14.8a2 2 0 002 2h10.8a2 2 0 002-2V8.2z"/><path d="M14 2.6v5.6h5.4M8.6 13h6.8M8.6 17h4.4"/></svg></div><div class="n">02</div><h3>Bezpłatna wycena</h3><p>Otrzymasz darmową wycenę dopasowaną do Twoich potrzeb.</p></div>
+      <div class="step"><div class="ic"><svg width="28" height="22" viewBox="0 0 34 20" fill="none" stroke="#E9A23B" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M2 4h9M23 4h9M4 4v3M30 4v3"/><circle cx="17" cy="11" r="5.2"/><path d="M11 5l4.6 4.2M23 5l-4.6 4.2"/></svg></div><div class="n">03</div><h3>Realizacja</h3><p>Przystępujemy do pracy z użyciem nowoczesnych dronów.</p></div>
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D1B2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div><div class="n">04</div><h3>Gotowe</h3><p>Cieszysz się czystą elewacją i perfekcyjnym efektem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mid">
+  <div class="wrap why">
+    <div class="rv">
+      <div class="lbl"><i></i><span>Dlaczego Uranos Eye</span></div>
+      <h2 class="dsp">Stawiamy na jakość,<br>bezpieczeństwo<br>i skuteczność.</h2>
+      <div class="btns" style="margin-top:24px"><a class="btn btn-a" href="#uslugi">Zobacz naszą ofertę
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+    </div>
+    <div class="checks stg">
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Nowoczesna technologia dronowa</div>
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Brak rusztowań i podnośników</div>
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Profesjonalny sprzęt wysokociśnieniowy</div>
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Szybka realizacja zleceń</div>
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Certyfikowani piloci z uprawnieniami</div>
+      <div class="chk"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Bezpieczeństwo ludzi i obiektu</div>
+      <div class="chk" style="grid-column:1/-1"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Specjalistyczna chemia dopasowana do powierzchni</div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="realizacje">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:32px" class="rv">
+      <div>
+        <div class="lbl"><i></i><span>Realizacje</span></div>
+        <h2 class="dsp" style="margin:0">Ostatnie prace</h2>
+      </div>
+    </div>
+    <div class="real stg">
+      <div class="rc">
+        <div class="ph" style="aspect-ratio:16/10"><span class="phc">A-10 · 1</span><span class="mono" style="font-size:11.5px;color:#415A77">Zdjęcie realizacji</span></div>
+        <div class="rc-t"><div class="m">[MIEJSCOWOŚĆ] · [DATA]</div><h3>[Typ obiektu]</h3><div class="rcs"><div><b>[XXX] m²</b><span>powierzchnia</span></div><div><b>[X] h</b><span>czas pracy</span></div></div></div>
+      </div>
+      <div class="rc">
+        <div class="ph" style="aspect-ratio:16/10"><span class="phc">A-10 · 2</span><span class="mono" style="font-size:11.5px;color:#415A77">Zdjęcie realizacji</span></div>
+        <div class="rc-t"><div class="m">[MIEJSCOWOŚĆ] · [DATA]</div><h3>[Typ obiektu]</h3><div class="rcs"><div><b>[XXX] m²</b><span>powierzchnia</span></div><div><b>[X] h</b><span>czas pracy</span></div></div></div>
+      </div>
+      <div class="note">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:18px" aria-hidden="true"><path d="M12 9v4.4M12 17.4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+        <h3 class="dsp" style="margin:0 0 12px;font-size:19px;color:#fff;line-height:1.15">Ta sekcja czeka<br>na prawdziwe dane</h3>
+        <p style="margin:0 0 10px;font-size:14.5px;line-height:1.55;color:#8FA1B6">Nie wypełniamy jej przykładowymi realizacjami ani zmyślonymi liczbami.</p>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#8FA1B6">Każda karta potrzebuje zdjęcia, miejscowości, daty, metrażu i czasu pracy. Do tego czasu sekcja pozostanie ukryta na produkcji.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap cta">
+    <div class="rv">
+      <div class="lbl"><i></i><span>Kontakt</span></div>
+      <h2 class="dsp">Potrzebujesz wyceny<br>lub chcesz umówić termin?</h2>
+      <p class="p">Wypełnij formularz lub zadzwoń. Odpowiemy na Twoje zgłoszenie i przygotujemy bezpłatną wycenę.</p>
+      <form class="form" style="margin-top:24px" onsubmit="return false">
+        <div class="fl"><label for="f-imie">Imię i nazwisko</label><input id="f-imie" name="imie" type="text" placeholder="Wpisz swoje imię i nazwisko"></div>
+        <div class="fl"><label for="f-tel">Numer telefonu *</label><input id="f-tel" name="telefon" type="tel" required placeholder="Wpisz numer telefonu"></div>
+        <div class="fl"><label for="f-mail">Adres e-mail *</label><input id="f-mail" name="email" type="email" required placeholder="Wpisz adres e-mail"></div>
+        <div class="fl"><label for="f-usl">Rodzaj usługi *</label>
+          <select id="f-usl" name="usluga" required>
+            <option value="">Wybierz rodzaj usługi</option>
+            <option>Mycie elewacji</option><option>Mycie dachów</option><option>Mycie paneli fotowoltaicznych</option>
+            <option>Mycie szklarni</option><option>Mycie billboardów i banerów</option><option>Hale i magazyny</option>
+            <option>Kominy przemysłowe</option><option>Impregnacja dachów</option><option>Impregnacja elewacji</option>
+            <option>Inne prace myjące na wysokości</option>
+          </select>
+        </div>
+        <div class="fl full"><label for="f-adr">Adres realizacji *</label><input id="f-adr" name="adres" type="text" required placeholder="Wpisz adres realizacji usługi"></div>
+        <div class="fl"><label for="f-pow">Powierzchnia (opcjonalnie)</label><input id="f-pow" name="powierzchnia" type="text" placeholder="Podaj powierzchnię w m²"></div>
+        <div class="fl"><label for="f-wys">Wysokość obiektu (opcjonalnie)</label><input id="f-wys" name="wysokosc" type="text" placeholder="Podaj wysokość w metrach"></div>
+        <div class="fl full"><label for="f-msg">Treść wiadomości</label><textarea id="f-msg" name="wiadomosc" placeholder="Opisz szczegóły zlecenia lub zadaj pytanie..."></textarea></div>
+        <div class="cons"><input id="f-rodo" name="rodo" type="checkbox" required><label for="f-rodo" style="font-family:var(--body);font-size:13px;letter-spacing:0;text-transform:none;color:var(--mist)">Wyrażam zgodę na przetwarzanie danych osobowych w celu kontaktu i przygotowania wyceny.</label></div>
+        <div class="fl full"><button class="btn btn-a" type="submit">Wyślij zapytanie
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button></div>
+        <p class="full mono" style="grid-column:1/-1;margin:0;font-size:11.5px;color:#6B7E96">Twoje dane są bezpieczne i nie będą udostępniane osobom trzecim.</p>
+      </form>
+    </div>
+
+    <div class="rv">
+      <div style="background:var(--navy);padding:clamp(24px,3vw,34px);border-left:3px solid var(--amber)">
+        <div class="mono" style="font-size:11px;letter-spacing:.22em;color:#E9A23B;text-transform:uppercase;margin-bottom:16px">Dane kontaktowe</div>
+        <div class="kv"><span>Telefon</span><a href="tel:+48794724244">+48 794 724 244</a></div>
+        <div class="kv"><span>E-mail</span><a href="mailto:kontakt@uranoseye.pl">kontakt@uranoseye.pl</a></div>
+        <div class="kv"><span>Obszar działania</span><b>Cała Polska</b></div>
+        <div class="kv" style="border-bottom:0"><span>Godziny kontaktu</span><b>Pon.–Pt. 8:00–18:00</b></div>
+      </div>
+      <div style="margin-top:20px">
+        <div class="mono" style="font-size:11px;letter-spacing:.22em;color:#8FA1B6;text-transform:uppercase;margin-bottom:16px">Dlaczego warto wysłać zapytanie?</div>
+        <div class="stg">
+          <div class="atut" style="padding:16px 0"><span class="n">01</span><div><h3 style="font-size:14.5px">Bezpłatna wycena</h3><p style="font-size:13.5px">Przygotujemy darmową wycenę dopasowaną do Twoich potrzeb.</p></div></div>
+          <div class="atut" style="padding:16px 0"><span class="n">02</span><div><h3 style="font-size:14.5px">Szybka odpowiedź</h3><p style="font-size:13.5px">Odpowiadamy na każde zgłoszenie najszybciej jak to możliwe.</p></div></div>
+          <div class="atut" style="padding:16px 0"><span class="n">03</span><div><h3 style="font-size:14.5px">Indywidualne podejście</h3><p style="font-size:13.5px">Każde zlecenie traktujemy indywidualnie i dopasowujemy do potrzeb klienta.</p></div></div>
+          <div class="atut" style="padding:16px 0;border-bottom:1px solid var(--steel)"><span class="n">04</span><div><h3 style="font-size:14.5px">Dojazd do klienta</h3><p style="font-size:13.5px">Docieramy do Ciebie w dowolne miejsce na terenie całej Polski.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+          <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#E0E1DD" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 4h9M23 4h9M4 4v3M30 4v3"/><circle cx="17" cy="11" r="5.2"/><path d="M11 5l4.6 4.2M23 5l-4.6 4.2"/></svg>
+          <span class="dsp" style="font-size:19px;letter-spacing:.13em;color:#fff">Uranos Eye</span>
+        </div>
+        <p class="mono" style="margin:0 0 20px;font-size:11.5px;letter-spacing:.2em;color:#E9A23B;text-transform:uppercase">Profesjonalne mycie dronem</p>
+        <p style="margin:0 0 20px;font-size:14.5px;line-height:1.6;color:#8FA1B6">Kąpielowa 13<br>32-830 Wojnicz</p>
+        <div class="soc">
+          <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="#8FA1B6" aria-hidden="true"><path d="M14 8.4V6.6c0-.8.2-1.2 1.4-1.2h1.5V2.2h-2.6c-3.1 0-4.2 1.6-4.2 4.2v2h-2v3.2h2V21h3.9v-9.4h2.6l.4-3.2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8FA1B6" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#8FA1B6" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div><div class="fh">Nawigacja</div><div class="fl-n"><a href="#top">Strona główna</a><a href="#o-nas">O nas</a><a href="#uslugi">Usługi</a><a href="#realizacje">Realizacje</a><a href="#kontakt">Kontakt</a></div></div>
+      <div><div class="fh">Usługi</div><div class="fl-n"><a href="#uslugi">Mycie elewacji</a><a href="#uslugi">Mycie dachów</a><a href="#uslugi">Mycie paneli fotowoltaicznych</a><a href="#uslugi">Mycie szklarni</a><a href="#uslugi">Mycie billboardów</a><a href="#uslugi">Hale i magazyny</a><a href="#uslugi">Kominy przemysłowe</a><a href="#uslugi">Impregnacja dachów</a><a href="#uslugi">Impregnacja elewacji</a></div></div>
+      <div><div class="fh">Kontakt</div><div class="fl-n"><a class="mono" href="tel:+48794724244">+48 794 724 244</a><a class="mono" href="mailto:kontakt@uranoseye.pl">kontakt@uranoseye.pl</a><span style="color:#8FA1B6;font-size:14px">Cała Polska</span><span style="color:#8FA1B6;font-size:14px">Pon.–Pt. 8:00–18:00</span></div></div>
+    </div>
+    <div class="fbot">
+      <span class="mono" style="font-size:11px;letter-spacing:.16em">NIP / REGON - do uzupełnienia</span>
+      <span>© 2026 Uranos Eye. Wszelkie prawa zastrzeżone.</span>
+      <a href="#">Polityka prywatności</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prog=document.querySelector('#prog i'), hm=document.getElementById('hm'), hc=document.getElementById('hc');
+  var stage=document.querySelector('.ba-stage'), bab=document.getElementById('bab'),
+      bal=document.getElementById('bal'), bak=document.getElementById('bak');
+  var ticking=false;
+  function cl(v,a,b){return v<a?a:(v>b?b:v);}
+  function frame(){
+    ticking=false;
+    var y=window.scrollY||window.pageYOffset;
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    if(prog) prog.style.width=(max>0?cl(y/max,0,1):0)*100+'%';
+    if(RM) return;
+    var hh=window.innerHeight*0.86, p=cl(y/hh,0,1);
+    if(hm) hm.style.transform='scale('+(1+p*0.1).toFixed(4)+') translate3d(0,'+(p*30).toFixed(1)+'px,0)';
+    if(hc){ hc.style.transform='translate3d(0,'+(p*-44).toFixed(1)+'px,0)'; hc.style.opacity=(1-p*1.15).toFixed(3); }
+    if(stage){
+      var r=stage.getBoundingClientRect(), tr=stage.offsetHeight-window.innerHeight;
+      if(tr>0){
+        var sp=cl(-r.top/tr,0,1);
+        var e=sp<.18?0:(sp>.88?1:(sp-.18)/.70);
+        var pct=(6+e*88)+'%';
+        if(bab) bab.style.width=pct;
+        if(bal) bal.style.left=pct;
+        if(bak) bak.style.left=pct;
+      }
+    }
+  }
+  function onS(){ if(!ticking){ticking=true;requestAnimationFrame(frame);} }
+  window.addEventListener('scroll',onS,{passive:true});
+  window.addEventListener('resize',onS,{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    document.querySelectorAll('.rv,.stg').forEach(function(el){ io.observe(el); });
+    var d=document.getElementById('diag');
+    if(d){ var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io2.unobserve(e.target); } }); },{threshold:.25});
+      io2.observe(d); }
+  } else {
+    document.querySelectorAll('.rv,.stg').forEach(function(el){ el.classList.add('in'); });
+    var dd=document.getElementById('diag'); if(dd) dd.classList.add('on');
+  }
+
+  var bg=document.querySelector('.burger');
+  if(bg) bg.addEventListener('click',function(){
+    var m=document.querySelector('.menu');
+    if(!m) return;
+    var open=m.style.display==='flex';
+    m.style.display=open?'':'flex';
+    m.style.position='absolute';m.style.top='74px';m.style.left='0';m.style.right='0';
+    m.style.flexDirection='column';m.style.gap='0';m.style.background='#0D1B2A';
+    m.style.borderBottom='1px solid rgba(65,90,119,.5)';m.style.padding=open?'0':'8px 0';
+    m.querySelectorAll('a').forEach(function(a){a.style.padding='14px clamp(16px,4vw,64px)';});
+  });
+  frame();
+})();
+</script>
+
+</body>
+</html>
